@@ -1,0 +1,30 @@
+{
+  "name": "react-native-navigation-layouts",
+  "version": "0.0.1",
+  "description": "Helpful layout generators for react-native-navigation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukebrandonfarrell/react-native-navigation-layouts.git"
+  },
+  "keywords": [
+    "react-navive",
+    "react-native-navigation",
+    "navigation",
+    "generators",
+    "layouts",
+    "json"
+  ],
+  "author": "Luke Brandon Farrell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukebrandonfarrell/react-native-navigation-layouts/issues"
+  },
+  "homepage": "https://github.com/lukebrandonfarrell/react-native-navigation-layouts#readme",
+  "peerDependencies": {
+    "react-native-navigation": "2.x"
+  }
+}
