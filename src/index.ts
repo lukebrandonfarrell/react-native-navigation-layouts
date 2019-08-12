@@ -1,4 +1,6 @@
+
 import { Platform } from "react-native";
+import { Options } from "react-native-navigation";
 
 /** -------------------------------------------- */
 /**              Layout Generators               */
@@ -12,7 +14,7 @@ import { Platform } from "react-native";
  * @param options {object} - Options for the component
  * @return {{component: {name: *, passProps: {}, options: {}}}}
  */
-export const component = (screen, props, options) => {
+export const component = (screen : string, props : object, options : Options) => {
   return {
     component: {
       name: screen,
@@ -33,11 +35,11 @@ export const component = (screen, props, options) => {
  * @param stackOptions {object} - Options for this stack
  * @return {{stack: {children: *[], options: {}}}}
  */
-export const stack = (children, stackOptions) => {
+export const stack = (children : any, options : Options) => {
   return {
     stack: {
       children,
-      options: { ...stackOptions }
+      options,
     }
   };
 };
@@ -48,14 +50,14 @@ export const stack = (children, stackOptions) => {
  * @param id {string} - Bottom tabs id
  * @param children {array} - Bottom tabs children
  * @param options {object} - Bottom tabs options
- * @return {{bottomTabs: {id: string, children: *[], options: {}}}}
+ * @return {object}
  */
-export const bottomTabs = (id = "bottomTabs", children, options) => {
+export const bottomTabs = (id = "bottomTabs", children : any, options : Options) => {
   return {
     bottomTabs: {
       id: id,
       children,
-      options: { ...options }
+      options
     }
   };
 };
@@ -64,9 +66,9 @@ export const bottomTabs = (id = "bottomTabs", children, options) => {
  * Handy method to wrap any layout type in root
  *
  * @param object {object} - Object to wrap in root
- * @return {{root: { object }}}
+ * @return {object}
  */
-export const root = object => {
+export const root = (object : object) : object => {
   return { root: { ...object } };
 };
 
@@ -75,9 +77,9 @@ export const root = object => {
  *
  * @param label
  * @param icon
- * @return {{bottomTab: {text: *, icon: *}}}
+ * @return {object}
  */
-export const bottomTab = (label, icon) => {
+export const bottomTab = (label : string, icon : any) : object => {
   return {
     bottomTab: {
       text: label,
@@ -92,9 +94,9 @@ export const bottomTab = (label, icon) => {
  * @param id
  * @param icon
  * @param color
- * @return {{bottomTab: {text: *, icon: *}}}
+ * @return {object}
  */
-export const button = (id, icon, color) => {
+export const button = (id : any, icon : any, color : string) => {
   return { id, icon, color };
 };
 
@@ -102,9 +104,9 @@ export const button = (id, icon, color) => {
  * Handy method for wrapping buttons in rightButtons
  *
  * @param buttons
- * @return {{rightButtons: *[]}}
+ * @return {object}
  */
-export const rightButtons = buttons => {
+export const rightButtons = (buttons : Array<object>) => {
   return { rightButtons: [...buttons] };
 };
 
@@ -122,11 +124,11 @@ export const rightButtons = buttons => {
  * @param waitForRender
  * @param platform
  *
- * @return {{from: *, to: *, duration: *, startDelay: *, interpolation: string}}
+ * @return {object}
  */
-export function animate(command, property, from, to, duration, delay, interpolation = "decelerate", waitForRender = true, platform){
-  const commands = ["setRoot", "push", "pop", "showModal", "dismissModal"];
-  const properties = ["x", "y", "alpha", "scaleX", "scaleY", "rotationX", "rotationY", "rotation"];
+export function animate(command : string, property : string, from : number, to: number, duration : number, delay : number, interpolation = "decelerate", waitForRender = true, platform : string) : object {
+  const commands : Array<string> = ["setRoot", "push", "pop", "showModal", "dismissModal"];
+  const properties : Array<string> = ["x", "y", "alpha", "scaleX", "scaleY", "rotationX", "rotationY", "rotation"];
 
   if(!commands.includes(command)) throw new Error(`First parameter 'command' must be one of: ${commands.join(", ")}`);
   if(!properties.includes(property)) throw new Error(`Second parameter 'property' must be one of: ${properties.join(", ")}`);

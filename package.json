@@ -2,9 +2,14 @@
   "name": "react-native-navigation-layouts",
   "version": "0.0.2",
   "description": "Utility library for generating layouts for react-native-navigation",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\"",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -26,5 +31,11 @@
   "homepage": "https://github.com/lukebrandonfarrell/react-native-navigation-layouts#readme",
   "peerDependencies": {
     "react-native-navigation": "2.x"
+  },
+  "devDependencies": {
+    "@types/react-native": "^0.60.4",
+    "react-native": "^0.60.4",
+    "react-native-navigation": "^2.26.5",
+    "typescript": "^3.5.3"
   }
 }
