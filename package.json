@@ -1,6 +1,6 @@
 {
   "name": "react-native-navigation-layouts",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Utility library for generating layouts for react-native-navigation",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
