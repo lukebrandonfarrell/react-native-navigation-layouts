@@ -9,7 +9,11 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "pre-commit": "lint-staged",
+    "postinstall": "husky install"
   },
   "repository": {
     "type": "git",
@@ -33,9 +37,16 @@
     "react-native-navigation": "2.x"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@types/react-native": "^0.60.4",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "pinst": "^2.1.6",
+    "prettier": "^2.3.0",
     "react-native": "^0.60.4",
     "react-native-navigation": "^2.26.5",
-    "typescript": "^3.5.3"
+    "semantic-release": "^17.4.3",
+    "typescript": "^3.9.9"
   }
 }
