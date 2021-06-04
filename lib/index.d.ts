@@ -98,7 +98,7 @@ export declare const button: (id: any, icon: any, color: string) => {
  * @param buttons
  * @return {object}
  */
-export declare const rightButtons: (buttons: object[]) => {
+export declare const rightButtons: (buttons: Array<object>) => {
     rightButtons: object[];
 };
 /**
