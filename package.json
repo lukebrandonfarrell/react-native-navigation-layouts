@@ -46,7 +46,7 @@
     "prettier": "^2.3.0",
     "react-native": "^0.60.4",
     "react-native-navigation": "^2.26.5",
-    "semantic-release": "^17.4.3",
+    "semantic-release": "^19.0.3",
     "typescript": "^3.9.9"
   }
 }
